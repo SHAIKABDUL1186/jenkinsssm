@@ -1,0 +1,7 @@
+{
+    "Parameters": {
+        "commands": [
+            "ipconfig"
+        ]
+    }
+}
