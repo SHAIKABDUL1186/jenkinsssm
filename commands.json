@@ -1,8 +1,7 @@
 {
     "Parameters": {
         "commands": [
-            "Import-Module WebAdministration",
-            "$AppPools = (Get-ChildItem -Path IIS:\AppPools\)"
+            "ifconfig",
         ]
     }
 }
