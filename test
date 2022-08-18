@@ -1,0 +1,14 @@
+import-module Webadministration
+$AppPools = (Get-ChildItem -Path IIS:\AppPools)
+foreach($AppPool in $AppPools)
+{
+
+    Write-Host "Restarting Application Pool : $($AppPools.name)"
+
+    #convert AppPool information to Json and save it in AppPool.json
+    $AppPool |select name,State |ConvertTo-Json |Out-File c:\AppPool.json
+
+}
+
+#convert Json file content back to Powershell Objects
+ConvertFrom-Json -InputObject (Get-Content -Path C:\AppPool.json -Raw)
